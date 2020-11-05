@@ -1,0 +1,16 @@
+<h1><%= @cocktail.name %></h1>
+
+<div class="card">
+  <%= image_tag @cocktail.image_url %>
+  <%= link_to "Add Dosage", new_cocktail_dose_path(@cocktail.id) %>
+  <% @cocktail.doses.each do |dose| %>
+    <%= dose.description %>
+    <%= dose.ingredient.name %>
+    <%= link_to "remove", dose_path(dose.id), method: :delete, data: { confirm: "Are you sure ?" } %>
+
+
+  <% end %>
+</div>
+
+
+

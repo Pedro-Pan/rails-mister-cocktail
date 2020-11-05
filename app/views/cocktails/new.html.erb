@@ -1,0 +1,7 @@
+<h1>Form to create new cocktail page</h1>
+
+<%= simple_form_for(@cocktail) do |input| %>
+  <%= input.input :name %>
+  <%= input.input :image_url %>
+  <%= input.submit %>
+<% end %>
