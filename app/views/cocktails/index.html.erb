@@ -1,13 +1,13 @@
 <div class="back-ground">
   <div class="title"> <h1>Home Cocktails</h1></div>
 
-  <h2>Season:</h2>
+  <!-- <h2>Season:</h2> -->
 
   <div class="flex">
 
   </div>
 
-  <h2>All</h2>
+  <h2>All-(<%=@cocktails.count%>)-</h2>
   <% @cocktails.each do |cocktail| %>
   <div class="flex">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)">

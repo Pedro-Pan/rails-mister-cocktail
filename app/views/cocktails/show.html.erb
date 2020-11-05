@@ -1,16 +1,25 @@
 <h1><%= @cocktail.name %></h1>
 
-<div class="card">
-  <%= image_tag @cocktail.image_url %>
-  <%= link_to "Add Dosage", new_cocktail_dose_path(@cocktail.id) %>
-  <% @cocktail.doses.each do |dose| %>
-    <%= dose.description %>
-    <%= dose.ingredient.name %>
-    <%= link_to "remove", dose_path(dose.id), method: :delete, data: { confirm: "Are you sure ?" } %>
-
-
-  <% end %>
+<div class="container">
+    <%= image_tag @cocktail.image_url %>
+    <div class="whatever">
+      <h3>Recipe: </h3>
+      <% @cocktail.doses.each do |dose| %>
+        <p><%= dose.description %>
+        <%= dose.ingredient.name %>
+        <%= link_to dose_path(dose.id), method: :delete, data: { confirm: "Are you sure ?" } do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+       </p>
+      <% end %>
+      <%= link_to "Add Dosage", new_cocktail_dose_path(@cocktail.id) %>
+    </div>
+<%= simple_form_for [@cocktail, @dose] do |input| %>
+   <h4> Dosages: </h4>
+  <%= input.input :description, label: "Quantities" %>
+  <%= input.association :ingredient, input_html: { class: 'select2' } %>
+  <%= input.submit %>
+<% end %>
 </div>
-
 
 

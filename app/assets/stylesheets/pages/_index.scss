@@ -49,14 +49,55 @@
 }
 
 .card {
-  display: flex;
   justify-content: center;
   text-align: center;
 }
 
-
-.card img {
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90vw;
+}
+.container img {
   width: 250px;
   height: 280px;
   padding: 5px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.whatever {
+  border: 1px solid rgba(20,20,20,0.3);
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #fffcfc;
+}
+.whatever p {
+  margin: 0;
+
+}
+
+.simple_form{
+  padding: 5px;
+  width: 30vh;
+}
+
+i {
+  font-size: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #00ff5963;
+  a{
+
+  color: black;
+  }
 }
