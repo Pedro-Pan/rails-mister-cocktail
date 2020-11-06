@@ -12,7 +12,6 @@
         <% end %>
        </p>
       <% end %>
-      <%= link_to "Add Dosage", new_cocktail_dose_path(@cocktail.id) %>
     </div>
 <%= simple_form_for [@cocktail, @dose] do |input| %>
    <h4> Dosages: </h4>
